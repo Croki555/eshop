@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+span {
+  display: block;
+}
+
+span b {
+  margin-right: 5px;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 0;
+  list-style-type: none;
+  border-bottom: 1px solid #808080;
+}
+
+li > a {
+  position: absolute;
+  right: 68%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.rating-user {
+  display: flex;
+  align-items: center;
+}
+.product {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-direction: column;
+  max-width: 350px;
+  border: 1px solid #000;
+  padding: 20px;
+}
+.comments {
+  width: 50%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.rating-area {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+}
+
+.rating-area:not(:checked) > input,
+.rating-user:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label,
+.rating-user:not(:checked) > label {
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area label:before,
+.rating-user label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label,
+.rating-user > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+}
+.rate-area > label:active {
+	position: relative;
+}
